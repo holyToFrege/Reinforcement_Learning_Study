@@ -1,0 +1,118 @@
+% Created 2021-10-17 Sun 10:01
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{kotex}
+\hypersetup{colorlinks=true}
+\setcounter{secnumdepth}{2}
+\author{Holy frege}
+\date{\today}
+\title{Reinforcement Learning Study}
+\hypersetup{
+ pdfauthor={Holy frege},
+ pdftitle={Reinforcement Learning Study},
+ pdfkeywords={org-mode, export, html, theme, style, css, js, bigblow},
+ pdfsubject={Org-HTML export made simple.},
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Study의 시작}
+\label{sec:orgb5dda2e}
+
+\begin{note}
+
+
+A.I의 많은 논문들은 나같은 일반인이 이해하기 어려운 용어와 수식으로 가득차 있다. 내게 있어, A.I가  피부로 와닿지 못하는 큰 이유는, 나의 기초적 소양 부족이 첫번째 이유이고, 두번째로 추상적인 내용을 구체적 사례나 일상언어, 혹은 코딩으로 녹여내지 못하는데 있다고 본다. 스터디를 통해서 논문이나 책의 내용을 나만의 해석으로 이해하고 녹여내고 싶다. 그래서 내가 하는 얘기는 정석이 아니다. 다른 반대의견이 있을 수 있고 틀린 내용일 수 있다.
+\end{note}
+
+\section{What is Reinforcement  Learning?}
+\label{sec:org57eda6f}
+
+\subsection{Reinforcement Learning}
+\label{sec:org76469cc}
+\begin{note}
+
+
+\begin{itemize}
+\item A.I의 한 분야.
+
+\item \textbf{A.I (Artificial Intelligence)?}
+brain? IQ?
+\emph{Artificial intelligence is the simulation of human intelligence processes by machines.}
+
+\item \textbf{Artificial is like simulation but what is intelligence?}
+thinking? knowledge? know? cognition? what?
+ex) \emph{unintelligent: someone has used a lit match to see if there is any gas in a car’s gas tank.} 휘발유는  불에 탄다. 휘발유에 불을 붙이면 불이탄다는 knowledge를 몰라서 unintelligent한게 아니다. knowledge를  어떻게 활용 하느냐에 따라서 intelligent한지 unintelligent한지 알 수 있다. 이것이 intellingence의 의미가 아닐까?
+\end{itemize}
+\end{note}
+\begin{important}
+\begin{itemize}
+\item \textbf{AI의 핵심은 intelligence behavior인거 같다.  knowledge나 deductive reasoning을 통한 behavior(action)는 일반적이지만, 특정 상황에서 intelligence하지 않다. 이와는 다르게  model(learning)을 통한 behavior는  intelligence할 수 있다. ex) 칼은 사람을 벨수 있다. 칼을 든 사람은 위험하다. 그래서 칼을 든 사람 가까이에 가면 안된다. 이런 deductive한 reasoning과 knowledge로 가지 않는 action을 취하는 것은 intelligence하지 않다. 칼을 든사람이 주방이란곳에 있다면, 요리사일 확률이 높다. 여기서 칼을 든 요리사로 가는 action은 intelligence한 것이다. 어떻게 보면 context-awareness와도 연관이 있는듯 하다.}
+\end{itemize}
+\end{important}
+
+\subsection{Learning?}
+\label{sec:orga23d980}
+\begin{note}
+
+
+\begin{itemize}
+\item \emph{Learning in A.I is to make model through Inductive reasoning process.}
+사례(data)로 법칙?을 만드는것.
+deductive reasoning 방식과 다름. 작은 법칙을 조합해서 새로운 법칙을 만드는 것.
+
+\item \textbf{model?} Learning으로 통해서 만들어진 법칙, like inductive reasoning, deductive reasoning은 아니다.
+\end{itemize}
+\end{note}
+
+\subsection{Reinforcement?}
+\label{sec:orgb27e9c9}
+\begin{note}
+
+
+\emph{The term reinforcement was introduced by Pavlov in 1903 to describe the strengthening of the association between an unconditioned and a conditioned stimulus that results when the two are presented together. -\href{http://www.scholarpedia.org/article/Reinforcement\#:\~:text=The\%20term\%20reinforcement\%20was\%20introduced,the\%20two\%20are\%20presented\%20together.\&text=The\%20term\%20reinforcement\%20is\%20currently,learning\%20than\%20to\%20stimulus\%20learning.}{참고}}
+
+\begin{itemize}
+\item 강화: 개의 행동이 반복된 학습으로 조정될 수 있다.
+UC: food, R: agent인 개가 침을 흘린다.
+C: 종소리, =>R:침을 흘린다.
+=> 종소리를 울려도 개가 침을 흘린다. 반복된 학습후, 종소리를 듣고 개는 침을 흘린다.
+\end{itemize}
+\end{note}
+
+\subsection{Reinforcement + Learning}
+\label{sec:org7c9b89e}
+
+\begin{note}
+두개의 용어를 합쳐서 생각하면 어렴풋이, 어떤 특정한 대상이 있고, 이 대상은 나름대로의 행동이 있고, 이 행동이라는 것은 learning으로 만들어질 수 있다는 생각이 든다. 즉 개가 되었던 사람이 되었던 로봇이 되었던, action을 할수 있는 존재에 관한 학문이라는 것은 확실해 보인다. 그리고 그 존재의 action은 학습을 통해서 바뀔수 있다는 것을 말할려는 것 같다. Reinforcement Learning에서는 agent, action과 같은 용어를 그대로 사용한다. 
+\end{note}
+
+\section{Reinforment Learning 용어들}
+\label{sec:org7dcab86}
+\begin{note}
+\begin{itemize}
+\item \textbf{Agent}: 없으면 안돼? RL의 정의에 의해서\ldots{}
+\item \textbf{Actions}: 없으면 안돼? RL의 정의에 의해서\ldots{}
+\item \textbf{Environments}: 없으면 안돼? Deductive Reasoning이나 knowledge기반으로 behavior를 할게 아니라, 특정 조건에서 intelligence behavior를 하기 위해서 environments가 필요하다.
+\item \textbf{Learning}:
+\item \textbf{state(status)}:
+\end{itemize}
+\end{note}
+\end{document}

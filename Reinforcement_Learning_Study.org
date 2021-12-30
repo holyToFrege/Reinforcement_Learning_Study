@@ -1,0 +1,125 @@
+
+#+TITLE: Reinforcement Learning Study
+#+AUTHOR: Holy frege
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color=></font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+LATEX_HEADER: \usepackage{kotex}
+#+latex_header: \hypersetup{colorlinks=true}
+
+* Study의 시작
+
+#+begin_note
+
+A.I의 많은 논문들은 나같은 일반인이 이해하기 어려운 용어와 수식으로 가득차 있다. 내게 있어, A.I가  피부로 와닿지 못하는 큰 이유는, 나의 기초적 소양 부족이 첫번째 이유이고, 두번째로 추상적인 내용을 구체적 사례나 일상언어, 혹은 코딩으로 녹여내지 못하는데 있다고 본다. 스터디를 통해서 논문이나 책의 내용을 나만의 해석으로 이해하고 녹여내고 싶다. 그래서 내가 하는 얘기는 정석이 아니다. 다른 의견이 있을 수 있고 틀린 내용일 수 있다.
+
+#+end_note
+
+** 좋은 자료들
+- 동영상
+#+begin_note
+[[https://www.youtube.com/channel/UCcbPAIfCa4q0x7x8yFXmBag][혁펜하임]], 
+#+end_note
+- 책, 논문
+#+begin_note
+
+#+end_note
+- website
+  #+begin_note
+[[https://dnddnjs.gitbooks.io/rl/content/][RL Korea]],   
+  #+end_note
+- 기타
+  #+begin_note
+  - unity 공부할 필요 있음.
+  #+end_note
+* What is Reinforcement  Learning?
+
+** Reinforcement Learning
+#+begin_note
+
+- A.I의 한 분야.
+
+  
+- *A.I (Artificial Intelligence)?*
+  brain? IQ?
+  /Artificial intelligence is the simulation of human intelligence processes by machines./
+
+  
+- *Artificial is like simulation but what is intelligence?*
+  thinking? knowledge? know? cognition? what?
+  ex) /unintelligent: someone has used a lit match to see if there is any gas in a car’s gas tank./ 휘발유는  불에 탄다. 휘발유에 불을 붙이면 불이탄다는 knowledge를 몰라서 unintelligent한게 아니다. knowledge를  어떻게 활용 하느냐에 따라서 intelligent한지 unintelligent한지 알 수 있다. 이것이 intellingence의 의미가 아닐까?
+
+#+end_note
+ #+begin_important
+ - *AI의 핵심은 intelligence behavior인거 같다.  knowledge나 deductive reasoning을 통한 behavior(action)는 일반적이지만, 특정 상황에서 intelligence하지 않다. 이와는 다르게  model(learning)을 통한 behavior는  intelligence할 수 있다. ex) 칼은 사람을 벨수 있다. 칼을 든 사람은 위험하다. 그래서 칼을 든 사람 가까이에 가면 안된다. 이런 deductive한 reasoning과 knowledge로 가지 않는 action을 취하는 것은 intelligence하지 않다. 칼을 든사람이 주방이란곳에 있다면, 요리사일 확률이 높다. 여기서 칼을 든 요리사로 가는 action은 intelligence한 것이다. 어떻게 보면 context-awareness와도 연관이 있는듯 하다.*
+ #+end_important
+
+** Learning?
+#+begin_note
+
+- /Learning in A.I is to make model through Inductive reasoning process./
+  사례(data)로 법칙?을 만드는것.
+  deductive reasoning 방식과 다름. 작은 법칙을 조합해서 새로운 법칙을 만드는 것.  
+
+  
+- *model?* Learning으로 통해서 만들어진 법칙, like inductive reasoning, deductive reasoning은 아니다.
+
+#+end_note
+
+** Reinforcement?
+#+begin_note
+  Reinforcement란 용어를 Skinner의 이론에서 나왔다는 말이 많다. pavlov, thondike, skinner 중 skinner는 reward에 따른 생쥐연구로 더 비슷하긴 하다.(지렛대,먹이). 그런데 초창기의 연구인  pavlov도 읽어볼만 하다.
+  
+/The term reinforcement was introduced by Pavlov in 1903 to describe the strengthening of the association between an unconditioned and a conditioned stimulus that results when the two are presented together. -[[http://www.scholarpedia.org/article/Reinforcement#:~:text=The%20term%20reinforcement%20was%20introduced,the%20two%20are%20presented%20together.&text=The%20term%20reinforcement%20is%20currently,learning%20than%20to%20stimulus%20learning.][참고]]/
+
+
+- 강화: 개의 행동이 반복된 학습으로 조정될 수 있다.
+  UC: food, R: agent인 개가 침을 흘린다.
+  C: 종소리, =>R:침을 흘린다.
+  => 종소리를 울려도 개가 침을 흘린다. 반복된 학습후, 종소리를 듣고 개는 침을 흘린다.
+
+
+#+end_note
+
+** Reinforcement + Learning
+
+#+begin_note
+두개의 용어를 합쳐서 생각하면 어렴풋이, 어떤 특정한 대상이 있고, 이 대상은 나름대로의 행동이 있고, 이 행동이라는 것은 learning으로 만들어질 수 있다는 생각이 든다. 즉 개가 되었던 사람이 되었던 로봇이 되었던, action을 할수 있는 존재에 관한 학문이라는 것은 확실해 보인다. 그리고 그 존재의 action은 학습을 통해서 바뀔수 있다는 것을 말할려는 것 같다. Reinforcement Learning에서는 agent, action과 같은 용어를 그대로 사용한다. 
+#+end_note
+
+** shutton교수의 생각
+
+#+begin_note
+/Reinforcement learning is defined not by characterizing learning methods, but by characterizing a learning problem./
+특이하게도 강화학습은 학습하는 "방식"으로 정의되는 것이 아니고 강화학습 "문제"인가로 정의되어 집니다. 그렇다면 어떤 문제가 강화학습 문제일까요? -[[https://dnddnjs.gitbooks.io/rl/content/what_is_reinforcement_learning.html][참조]]
+
+어떤식으로 학습하는지는 강화학습을 정의할 수 없다. 학습할 수 있는 문제 여부에 따라 강화학습을 정의한다.? 잘 모르겠음. 그냥 드는 생각은 모든 문제에 강화학습이 적용될 수 있다고 생각이 든다.
+#+end_note
+* Reinforment Learning 용어들
+#+begin_note
+- *try and error search*: 시행착오, 기본 원리
+- *optimal control*:
+- *Agent*: 없으면 안돼? behavior를 판단하는 주체.
+- *Actions*: 없으면 안돼? 선택가능한 behaviors.
+- *Environments*: 없으면 안돼? Deductive Reasoning이나 knowledge기반으로 behavior를 하는게 아니다. 특정 조건, 특정 환경에서,  intelligence behavior를 할 것이기 때문에 없으면 안된다.
+- *Goal*: 
+- *Learning*: 수백 수천번의 episode를 실행해서 현재상태에서 goal에 이르는 정보를 찾는 과정.
+- *state(status)*: 없으면 안돼? action이 없다면 상태도 없다.
+- *episode*: 시행착오끝에 goal에 가면 하나의 episode. 
+- *Exploitation*: episode를 통해서 얻은 정보를 이용.
+- *Exploration*: 아무런 정보없이 try.
+- *Reward*:
+- *MDP*:
+- *Monte Carlo*:
+- *planning*:
+- *policy*:
+#+end_note
+
+* Learning에 대해서
+#+begin_note
+헨젤과 그레텔의 breadscrum 방식으로는 agent가 goal에 도달하는 정보를 얻기에 비용이 많이 든다. exploration을 하면서 모든 과정을 trace하는게 아니라, goal에 도달후 그 이전 상태만 기록한다.
+#+end_note
